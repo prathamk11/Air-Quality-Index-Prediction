@@ -1,241 +1,259 @@
-# 🌫️ Air Quality Index (AQI) Prediction System
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Air Quality Index Prediction - Mumbai</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f4f7fb;
+    color:#333;
+}
+
+/* HEADER */
+
+header{
+    background: linear-gradient(135deg,#2b5876,#4e4376);
+    color:white;
+    padding:60px 20px;
+    text-align:center;
+}
 
-## 📌 Project Overview
+header h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+}
+
+/* BUTTON */
 
-Air pollution is a serious environmental issue that affects human health and climate. This project predicts the *Air Quality Index (AQI)* using various environmental and climate parameters such as temperature, humidity, wind speed, and atmospheric pressure.
+.demo-btn{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    background:#00c6ff;
+    color:white;
+    font-size:16px;
+    border-radius:25px;
+    cursor:pointer;
+    transition:0.3s;
+}
 
-The system uses *Machine Learning (Random Forest Regression)* to analyze climate data and predict the *PM2.5 AQI value. A **Flask web application* is used to allow users to input climate conditions and instantly receive AQI predictions.
+.demo-btn:hover{
+    background:#0072ff;
+    transform:scale(1.05);
+}
 
-This project demonstrates the *complete lifecycle of a Data Science and Machine Learning project*, from data collection to deployment.
+/* SECTION */
 
----
+section{
+    padding:50px 10%;
+}
 
-# 🚀 Live Demo
+/* CARDS */
 
-🔗 [https://air-quality-index-mumbai-predi.herokuapp.com/](https://air-quality-index-mumbai-predi.herokuapp.com/)
+.card{
+    background:white;
+    padding:25px;
+    margin:20px 0;
+    border-radius:10px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* TECH STACK */
+
+.tech{
+    text-align:center;
+    font-weight:bold;
+    padding:15px;
+    border-radius:8px;
+    background:#eef2ff;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#2b5876;
+    color:white;
+}
 
----
+</style>
+</head>
 
-# 🧠 Motivation
+<body>
 
-This project was inspired by *Krish Naik's Air Quality Index Prediction Project*, which demonstrates real-world Machine Learning implementation.
+<header>
 
-Reference Project:
-[https://github.com/krishnaik06/AQI-Project](https://github.com/krishnaik06/AQI-Project)
+<h1>🌍 Air Quality Index (AQI) Prediction – Mumbai</h1>
 
----
+<p>Machine Learning Web Application for Predicting Air Pollution Levels</p>
 
-# 🧪 Machine Learning Workflow
+<a href="https://air-quality-index-mumbai-predi.herokuapp.com/" target="_blank">
+<button class="demo-btn">🚀 Try Live Demo</button>
+</a>
 
-The project follows a *complete Data Science lifecycle*:
+</header>
 
-### 1️⃣ Data Collection
+<section>
 
-Climate data was collected using a *web scraping script* that extracts weather data from:
+<h2>📌 Project Overview</h2>
 
-[https://en.tutiempo.net/](https://en.tutiempo.net/)
+<div class="card">
 
-The scraper collects data from *2013–2018* and stores it in HTML format for each month.
+<p>
+Air pollution is one of the most critical environmental issues affecting urban populations.
+The <b>Air Quality Index (AQI)</b> helps measure pollution levels and indicates how safe the air
+is for public health.
+</p>
 
----
+<p>
+This project presents a <b>Machine Learning based web application</b> that predicts
+the AQI of the Mumbai region using environmental and climatic parameters.
+</p>
 
-### 2️⃣ Data Preprocessing
+<p>
+It demonstrates the complete lifecycle of a Data Science project including
+data collection, preprocessing, model training, and deployment.
+</p>
 
-AQI data from an external dataset was combined with the scraped climate data.
+</div>
 
-The AQI dataset originally contained *hourly AQI values, which were converted into **daily AQI values* and organized by year.
+</section>
 
-The climate dataset and AQI dataset were then merged into a single CSV dataset.
+<section>
 
----
+<h2>🧠 Project Workflow</h2>
 
-### 3️⃣ Data Cleaning
+<div class="grid">
 
-The combined dataset was cleaned by:
+<div class="card">
+<h3>📥 Data Collection</h3>
+<p>
+Custom web scraping pipeline was used to collect climate data
+from <b>2013 – 2018</b>.
+</p>
+</div>
 
-* Removing null values
-* Fixing improper data
-* Formatting numerical values
+<div class="card">
+<h3>🔄 Data Preprocessing</h3>
+<p>
+Raw scraped data was converted into structured datasets
+by extracting climate parameters and aggregating daily records.
+</p>
+</div>
 
-The cleaned dataset was saved as:
+<div class="card">
+<h3>🧹 Data Cleaning</h3>
+<p>
+Missing values removed, inconsistent records fixed,
+and outliers handled to improve model accuracy.
+</p>
+</div>
 
+<div class="card">
+<h3>⚙ Feature Engineering</h3>
+<p>
+Important climate features were selected and used
+for machine learning model training.
+</p>
+</div>
 
-Real_Combine.csv
+<div class="card">
+<h3>🌐 Deployment</h3>
+<p>
+The trained model was deployed using <b>Flask</b>
+and hosted on <b>Heroku</b>.
+</p>
+</div>
 
+</div>
 
----
+</section>
 
-### 4️⃣ Feature Engineering & Model Training
+<section>
 
-Several regression algorithms were tested:
+<h2>🤖 Machine Learning Models Tested</h2>
 
-* Linear Regression
-* Lasso Regression
-* Ridge Regression
-* Decision Tree Regressor
-* Random Forest Regressor
-* XGBoost Regressor
+<div class="grid">
 
-After performance comparison:
+<div class="tech">📈 Linear Regression</div>
 
-✅ *Random Forest Regressor* provided the best prediction accuracy and was selected as the final model.
+<div class="tech">📉 Lasso Regression</div>
 
-The trained model was saved using *Pickle serialization*.
+<div class="tech">📊 Ridge Regression</div>
 
----
+<div class="tech">🌳 Decision Tree Regressor</div>
 
-# 🖥️ Web Application
+<div class="tech">🌲 Random Forest Regressor</div>
 
-A *Flask web application* was built to interact with the trained machine learning model.
+<div class="tech">⚡ XGBoost Regressor</div>
 
-Users can input climate parameters such as:
+</div>
 
-* Temperature
-* Humidity
-* Wind Speed
-* Atmospheric Pressure
-* Visibility
+<div class="card">
 
-The Flask backend sends the data to the trained model and returns the predicted *Air Quality Index (AQI)*.
+<b>Best Performing Model:</b> Random Forest Regressor
 
----
+</div>
 
-# 🏗️ Tech Stack
+</section>
 
-### Programming Language
+<section>
 
-* Python
+<h2>🛠 Tech Stack</h2>
 
-### Machine Learning Libraries
+<div class="grid">
 
-* NumPy
-* Pandas
-* Scikit-learn
+<div class="tech">🐍 Python</div>
 
-### Web Framework
+<div class="tech">📊 Pandas</div>
 
-* Flask
+<div class="tech">🔢 NumPy</div>
 
-### Frontend
+<div class="tech">🤖 Scikit-learn</div>
 
-* HTML
-* CSS
+<div class="tech">⚡ XGBoost</div>
 
-### Model Serialization
+<div class="tech">🕸 BeautifulSoup</div>
 
-* Pickle
+<div class="tech">🌐 Flask</div>
 
-### Deployment
+<div class="tech">🎨 HTML / CSS</div>
 
-* Heroku
+<div class="tech">☁ Heroku</div>
 
----
+</div>
 
-# 📁 Project Structure
+</section>
 
+<footer>
 
-AirQualityIndex-Prediction
-│
-├── app.py                 # Flask web application
-├── model.py               # Machine learning model training
-├── model.pkl              # Saved trained model
-├── Real_Combine.csv       # Cleaned dataset
-├── requirements.txt       # Project dependencies
-├── Procfile               # Heroku deployment configuration
-│
-├── templates
-│   └── index.html         # Web interface
-│
-├── static
-│   └── css
-│       └── style.css
-│
-├── Machine Learning Models
-│   └── Regression_Ridge_Lasso.ipynb
-│
-├── Python Scrapping Files
-│   ├── Extract_combine.py
-│   ├── Html_script.py
-│   └── Plot_AQI.py
-│
-└── Scrapped Data
-    └── Real-Data
+<p>© 2026 AQI Prediction Project | Machine Learning Deployment</p>
 
+</footer>
 
----
-
-# ⚙️ Installation & Setup
-
-### 1️⃣ Clone the Repository
-
-bash
-git clone https://github.com/your-username/AirQualityIndex-Prediction.git
-
-
----
-
-### 2️⃣ Navigate to Project Folder
-
-bash
-cd AirQualityIndex-Prediction
-
-
----
-
-### 3️⃣ Install Dependencies
-
-bash
-pip install -r requirements.txt
-
-
----
-
-### 4️⃣ Train the Model
-
-bash
-python model.py
-
-
-This will generate:
-
-
-model.pkl
-
-
----
-
-### 5️⃣ Run the Flask Application
-
-bash
-python app.py
-
-
----
-
-### 6️⃣ Open in Browser
-
-
-http://127.0.0.1:5000
-
-
----
-
-# 📊 Sample Application Output
-
-Users can input climate data and receive a predicted *Air Quality Index (AQI)* value instantly.
-
----
-
-# 📌 Future Improvements
-
-* Add *real-time weather API integration*
-* Improve prediction using *Deep Learning models*
-* Add *interactive data visualization*
-* Deploy using *Docker and cloud platforms*
-* Convert frontend to *React.js*
-
----
-
-# 👨‍💻 Author
-
-Developed by *Prathamesh Kulkarni*
+</body>
+</html>
